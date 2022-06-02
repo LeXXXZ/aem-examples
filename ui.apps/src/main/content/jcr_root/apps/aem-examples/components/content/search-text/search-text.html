@@ -1,0 +1,15 @@
+<div data-sly-test="${wcmmode.edit && (!properties.text || !properties.propertyName || !properties.path)}" class="cq-placeholder" data-emptytext="${component.title}"></div>
+
+<sly data-sly-test="${properties.text && properties.propertyName && properties.path}" data-sly-use.model="com.hilti.email.core.ui.model.SearchResultModel">
+    <p> Search text: ${properties.text}</p>
+    <p> Property Name for search: ${properties.propertyName}</p>
+    <p> Under path: ${properties.path}</p>
+    <p>
+        Results:
+        <ul data-sly-list.result="${model.results}">
+            <li>
+                ${result}
+            </li>
+        </ul>
+    </p>
+</sly>
